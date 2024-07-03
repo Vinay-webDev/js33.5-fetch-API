@@ -16,7 +16,7 @@ const getDadJoke = async () => {
 getDadJoke(); */
 
 //"POST"
-
+/*
 const jokeObject = {
     id: '8U8EdpWnOuc', 
     joke: "Recent survey revealed 6 out of 7 dwarf's aren't happy."
@@ -34,11 +34,17 @@ const postDadJoke = async (jokeObj) => {
     console.log(jsonResponse.headers);
     
 }
-postDadJoke(jokeObject);
+postDadJoke(jokeObject); */
 
+// url 
 
+const requestJoke = async (firstName, lastName) =>  {
+    const response = await fetch(`https://icanhazdadjoke.com/jokes/random?firstName${firstName}&lastName${lastName}`);
+    const jsonResponse = await response.json();
+    console.log(jsonResponse);
+}
 
-
+requestJoke("Bruce", "Lee");
 
 
 
