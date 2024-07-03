@@ -67,7 +67,9 @@ const getDataFromForm = () => {
     return requestObj;
 }
 
-
+const buildRequestUrl = (requestData) => {
+    return `https://icanhazdadjoke.com/jokes/random?firstName${requestData.firstName}&lastName${requestData.lastName}&limitTo=[requestData.categories]`
+}
 
 
 
