@@ -30,8 +30,8 @@ const postDadJoke = async (jokeObj) => {
         },
         body: JSON.stringify(jokeObj)
     });
-    const postJokeData = await response.json();
-    console.log(postJokeData);
+    const jsonResponse = await response.json();
+    console.log(jsonResponse.headers);
     
 }
 postDadJoke(jokeObject);
