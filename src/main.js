@@ -74,10 +74,24 @@ const buildRequestUrl = (requestData) => {
 const requestJoke = async (url) => {
     const response = await fetch(url);
     const jsonResponse = await response.json();
-    console.log(jsonResponse);
+    /*const joke = jsonResponse.value.joke;
+    console.log(joke); */
+    const joke = jsonResponse.value.joke;
+    postJokeToPage(joke);
 }
 
+const postJokeToPage = (joke) => {
+    console.log(joke);
+}
 
+// procedural "workflow" function
+
+const processJoke = async () => {
+    const requestData = getDataFromForm();
+    const url = buildRequestUrl(requestData);
+    await requestJoke(url);
+    console.log("finished!");
+}
 
 
 
