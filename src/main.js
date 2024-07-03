@@ -71,7 +71,11 @@ const buildRequestUrl = (requestData) => {
     return `https://icanhazdadjoke.com/jokes/random?firstName${requestData.firstName}&lastName${requestData.lastName}&limitTo=[requestData.categories]`
 }
 
-
+const requestJoke = async (url) => {
+    const response = await fetch(url);
+    const jsonResponse = await response.json();
+    console.log(jsonResponse);
+}
 
 
 
